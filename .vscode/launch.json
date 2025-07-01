@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ShortifyApplication<shortify>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.url.shortify.ShortifyApplication",
+      "projectName": "shortify",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
