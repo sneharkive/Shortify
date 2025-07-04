@@ -6,6 +6,9 @@ import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 @Data
 public class UrlMapping {
@@ -20,6 +23,13 @@ public class UrlMapping {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+
+    //By Me
+    // @ManyToOne
+    // @JoinColumn(name = "user_id", nullable = false)
+    // @OnDelete(action = OnDeleteAction.CASCADE)
+    // private User user;
 
     @OneToMany(mappedBy = "urlMapping")
     private List<ClickEvent> clickEvents;

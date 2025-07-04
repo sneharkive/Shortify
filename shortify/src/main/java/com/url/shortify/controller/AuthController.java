@@ -37,14 +37,17 @@ public class AuthController {
         return ResponseEntity.ok("User registered successfully");
     }
 
-    @DeleteMapping("/public/delete/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
-        User user = userService.findById(id);
-        if (user != null) {
-            userService.deleteUser(user);
-            return ResponseEntity.ok("User deleted successfully");
-        } else {
-            return ResponseEntity.status(404).body("User not found");
-        }
-    }
+
+// need to handle foreign key constraints if user has created URLs
+// and then delete the user
+    // @DeleteMapping("/public/delete/{id}")
+    // public ResponseEntity<?> deleteUser(@PathVariable Long id) {
+    //     User user = userService.findById(id);
+    //     if (user != null) {
+    //         userService.deleteUser(user);
+    //         return ResponseEntity.ok("User deleted successfully");
+    //     } else {
+    //         return ResponseEntity.status(404).body("User not found");
+    //     }
+    // }
 }

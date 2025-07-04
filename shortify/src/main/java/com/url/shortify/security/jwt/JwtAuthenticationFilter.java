@@ -2,7 +2,6 @@ package com.url.shortify.security.jwt;
 
 import java.io.IOException;
 
-import javax.swing.Spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -15,7 +15,6 @@ import com.url.shortify.repository.UserRepository;
 import com.url.shortify.security.jwt.JwtAuthenticationResponse;
 import com.url.shortify.security.jwt.JwtUtils;
 
-
 @Service
 @AllArgsConstructor
 public class UserService {
@@ -26,6 +25,11 @@ public class UserService {
     private JwtUtils jwtUtils;
 
     public User registerUser(User user) {
+        if (userRepository.findByUsername(user.getUsername()).isPresent()) 
+            throw new RuntimeException("Username already exists");
+        if (userRepository.findByEmail(user.getEmail()).isPresent())
+            throw new RuntimeException("Email already exists");
+        
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
@@ -50,8 +54,12 @@ public class UserService {
                 () -> new UsernameNotFoundException("User not found with id: " + id));
     }
 
-    public void deleteUser(User user) {
-        userRepository.delete(user);
-    }
+
+// need to handle foreign key constraints if user has created URLs
+// and then delete the user
+
+    // public void deleteUser(User user) {
+    //     userRepository.delete(user);
+    // }
 
 }
