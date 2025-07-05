@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+
+
+/* Background gradients */
+.bg-custom-gradient {
+  background-image: linear-gradient(to right, #3b82f6, #9333ea);
+}
+
+.bg-custom-gradient-2 {
+  background-image: linear-gradient(to left, #3b82f6, #f43f5e);
+}
+
+.bg-card-gradient {
+  background-image: linear-gradient(to right, #38b2ac, #4299e1);
+}
+
+/* Custom colors (as utility classes) */
+.bg-navbarColor {
+  background-color: #ffffff;
+}
+
+.text-navbarColor {
+  color: #ffffff;
+}
+
+.bg-btnColor {
+  background-color: #3364F7;
+}
+.border-btnColor {
+  border-color: #3364F7;
+}
+
+.text-btnColor {
+  color: #3364F7;
+}
+
+.text-linkColor {
+  color: #2a5bd7;
+}
+
+/* Custom shadows */
+.shadow-custom {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-right {
+  box-shadow: 10px 0px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Font families */
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
