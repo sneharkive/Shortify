@@ -11,6 +11,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(false);
   const { setToken } = useStoreContext();
+  const [username, setUsername] = useState("");
 
   const {
     register,
@@ -32,8 +33,12 @@ const LoginPage = () => {
       const { data: response } = await api.post("/api/auth/public/login", data);
       console.log(response.token);
       setToken(response.token);
+      setUsername(data.username);
+      console.log(data.username);
       localStorage.setItem("JWT_TOKEN", JSON.stringify(response.token));
+      localStorage.setItem("Username", JSON.stringify(data.username));
       toast.success("Login Successful!");
+
       reset();
       navigate("/");
     } catch (error) {

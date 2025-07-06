@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
+import { FaUserCircle } from 'react-icons/fa';
 import { useStoreContext } from "../contextApi/ContextApi";
 
 const Navbar = () => {
@@ -79,9 +80,21 @@ const Navbar = () => {
               onClick={onLogOutHandler}
               className="sm:ml-0 -ml-1 bg-rose-700 text-white  cursor-pointer w-24 text-center font-semibold px-2 py-2 rounded-md  hover:text-slate-300   transition-all duration-150"
             >
+              
               LogOut
             </button>
           )}
+
+          {token && (
+            <Link
+              to="/"
+              className="sm:ml-0 text-white  cursor-pointer w-14 text-center font-semibold px-2  rounded-md  hover:text-slate-300   transition-all duration-150"
+            >
+                  <FaUserCircle className="text-xl sm:text-4xl text-white" />
+              {JSON.parse(localStorage.getItem("Username"))}
+            </Link>
+          )}
+          
         </ul>
         <button
           onClick={() => setNavbarOpen(!navbarOpen)}

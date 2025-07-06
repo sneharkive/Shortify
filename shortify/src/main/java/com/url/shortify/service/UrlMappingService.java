@@ -108,4 +108,13 @@ public class UrlMappingService {
     return urlMapping;
   }
 
+  public void deleteShortUrl(String shortUrl, User user) {
+    UrlMapping urlMapping = urlMappingRepository.findByShortUrlAndUser(shortUrl, user);
+    if (urlMapping != null) {
+      urlMappingRepository.delete(urlMapping);
+    } else {
+      throw new IllegalArgumentException("Short URL not found or does not belong to the user");
+    }
+  }
+
 }

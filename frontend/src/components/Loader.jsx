@@ -33,9 +33,9 @@ function Loader() {
     <div className="flex justify-center items-center w-full ">
       <div className="flex flex-col items-center gap-1">
         <ClipLoader
-          color="white"
+          color="red"
           loading={true}
-          size={25}
+          size={45}
           aria-label="clip-loader"
         />
       </div>

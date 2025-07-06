@@ -75,4 +75,23 @@ public class UrlMappingController {
     return ResponseEntity.ok(totalClicks);
   }
 
+
+
+
+
+// By Me
+
+  @DeleteMapping("/delete/{shortUrl}")
+  @PreAuthorize("hasRole('USER')")
+  public ResponseEntity<String> deleteShortUrl(@PathVariable String shortUrl, Principal principal) {
+      User user = userService.findByUsername(principal.getName());
+      urlMappingService.deleteShortUrl(shortUrl, user);
+      return ResponseEntity.ok("Short URL deleted successfully");
+  }
+
 }
+
+
+
+
+
