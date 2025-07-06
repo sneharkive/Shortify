@@ -13,8 +13,20 @@ const LandingPage = () => {
   const { token } = useStoreContext();
   console.log("TOKEN FROM LANDING PAGE: " + token);
 
+  const createLinkHandler = () => {
+    if (token) {
+      navigate("/dashboard");
+    } else {
+      navigate("/login");
+    }
+  };
+
   const dashBoardNavigateHandler = () => {
-    
+    if (token) {
+      navigate("/dashboard");
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -63,7 +75,7 @@ const LandingPage = () => {
               }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              onClick={dashBoardNavigateHandler}
+              onClick={createLinkHandler}
               className="border-btnColor border w-40 text-btnColor rounded-md  py-2 cursor-pointer hover:scale-95 transition-transform"
             >
               Create Short Link

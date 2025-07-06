@@ -21,11 +21,11 @@ const AppRouter = () => {
     return (
         <>
         {!hideHeaderFooter && <Navbar /> }
-        <Toaster position='bottom-center'/>
+        <Toaster/>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/s/:url" element={<ShortenUrlPage />} />
+          <Route path="/:url" element={<ShortenUrlPage />} />
 
           <Route path="/register" element={<PrivateRoute publicPage={true}><RegisterPage /></PrivateRoute>} />
           <Route path="/login" element={<PrivateRoute publicPage={true}><LoginPage /></PrivateRoute>} />
