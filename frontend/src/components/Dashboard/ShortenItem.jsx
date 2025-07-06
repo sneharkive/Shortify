@@ -113,10 +113,12 @@ const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate, refetch }
             <Link
               target="_"
               className="text-[17px]  font-montserrat font-[600] text-linkColor"
-              to={
-                // import.meta.env.VITE_REACT_FRONT_END_URL + "/s/" + `${shortUrl}`
-                import.meta.env.VITE_REACT_FRONT_END_URL + "/" + `${shortUrl}`
-              }
+              // to={
+              //   // import.meta.env.VITE_REACT_FRONT_END_URL + "/s/" + `${shortUrl}`
+              //   import.meta.env.VITE_REACT_FRONT_END_URL + "/" + `${shortUrl}`
+              // }
+
+              to={originalUrl.startsWith("http") ? originalUrl : `https://${originalUrl}`}
             >
               {/* {subDomain + "/s/" + `${shortUrl}`} */}
               {subDomain + "/" + `${shortUrl}`}
